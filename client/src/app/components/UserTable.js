@@ -6,12 +6,12 @@ const UserTable = ({users, onEdit}) => {
   const handleEditClick = (userId) => {
     onEdit(userId); // Call the prop function
   };
-    //console.log(users);
+    
   return (
     <div className="overflow-x-auto rounded-md shadow-md">
       <table className="table table-striped w-full">
         <thead>
-          <tr>
+          <tr style={{ color: 'invert' }}>
             <th className="text-left px-4 py-2">
               <input type="checkbox" />
             </th>
@@ -26,7 +26,8 @@ const UserTable = ({users, onEdit}) => {
         <tbody>
           {
             users.map((user) => (
-            <tr key={user._id} className="hover:bg-gray-100">
+
+            <tr key={user._id} className="hover:bg-gray-100" style={{ color: 'invert' }}>
               <td className="text-left px-4 py-2">
                 <input type="checkbox" /*checked={onSelect && onSelect(user._id)} onChange={() => onSelect && onSelect(user._id)} *//>
               </td>
@@ -37,7 +38,7 @@ const UserTable = ({users, onEdit}) => {
               <td className="text-left px-4 py-2">{user.hobbies}</td>
               <td className="text-left px-4 py-2 flex space-x-2">
                 <button className="btn btn-sm btn-warning" onClick={ () => handleEditClick(user._id)}>Edit</button>
-                {console.log(user._id)}
+                
                 <button className="btn btn-sm btn-danger">Delete</button>
               </td>
             </tr>
