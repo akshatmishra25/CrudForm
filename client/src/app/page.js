@@ -15,7 +15,7 @@ export default function Index () {
     const fetchUsers = async () => {
 
       try {
-        const response = await fetch('http://localhost:5000/users', {
+        const response = await fetch('https://crudform-q1ju.onrender.com/users', {
           method: 'GET',
         });
         if (response.ok) {
@@ -35,7 +35,7 @@ export default function Index () {
 
   const handleUserCreate = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:5000/users', userData);
+      const response = await axios.post('https://crudform-q1ju.onrender.com/users', userData);
       setUsers([...users, response.data]); // Update state with new user
       setIsAdding(false); // Close the form
       toast.success('User created successfully');
@@ -51,7 +51,7 @@ export default function Index () {
     // Update state with updated user data
     try {
       // Get user data from backend using userId
-      const response = await fetch(`http://localhost:5000/users/${userData}`);
+      const response = await fetch(`https://crudform-q1ju.onrender.com/users/${userData}`);
       const user = await response.json();
       
       // Open a form for editing with pre-populated user data (create a separate EditUserForm component for this)
